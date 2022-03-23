@@ -16,3 +16,5 @@ Reproducible results are possible using the Keras Tensorflow library. This code 
 ◦ This work was partially funded by Occitanie region under the Predict project. This funding is gratefully acknowledged. 
 
 ◦ This work has been carried out on the supercomputers PANDO (ISAE Supaero, Toulouse) and Olympe (CALMIP, Toulouse, project n°21042). Authors are grateful to ISAE Supaero and CALMIP for the hours allocated to this project.
+
+◦ The authors would like to thank Christian Nitschke for his initial input on modelling the crack growth problem.
