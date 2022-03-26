@@ -1,0 +1,1 @@
+Namespace(C_mean=1e-10, E=71700000000.0, K_IC=19.7, a_0_mean=0.001, delta_k=500, folder_data='data', lb_star=0.33, m_mean=3.5, m_std=0.125, n_test=100, n_train=1000, n_val=100, nb_gauges=3, nu=0.33, sigma_inf=78600000.0, theta_gauges=45, ub_star=0.95, x_gauge=(0.003, 0.014, 0.025), y_gauge=(0.014, 0.014, 0.014))
