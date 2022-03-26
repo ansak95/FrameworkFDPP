@@ -11,13 +11,42 @@ The project is illustrated with a realistic case study on the Jupyter Notebook `
 
 Reproducible results are possible using the Keras Tensorflow library. This code was tested on Python 3.8.5, Pandas 0.25.1, Ubuntu 18.04, Anaconda 4.7.11, Tensorflow version 2.3.0, and CUDA 11.0. It requires V100 GPUs.
 
-# Training and sampling
+# Generating set
+
 
 In order to generate a dataset, use the `python Generate_Script.py` command and set optional arguments if needed.
-
-Arguments dictionary and the the dataframes which are generated are saved to `data` folder by default.
+You can generate a dataset (training/validation/testing) by using as follows:
 
 ```
+$ python Generate_Script.py  --folder_data            data \
+                             --E                      71.7e9 \
+                             --nu                     0.33 \
+                             --sigma_inf              78.6e6 \
+                             --K_IC                   19.7 \
+                             --nb_gauges              3 \
+                             --x_gauge                (0.003, 0.014, 0.025) \
+                             --y_gauge                (0.014, 0.014, 0.014)  \
+                             --theta_gauges           45 \
+                             --a_0_mean               0.001 \
+                             --m_mean                 3.5 \
+                             --m_std                  0.125 \
+                             --C_mean                 1e-10 \
+                             --n_train                1000   \
+                             --n_val                  100 \
+                             --n_test                 100 \
+                             --delta_k                500 \
+                             --lb_star                0.33 \
+                             --ub_star                0.95 \
+ 
+```
+
+
+
+Arguments dictionary and the the dataframes which are generated are saved to `data` folder by default.
+The detail of command-line usage is as follows:
+
+```
+
 $ python Generate_Script.py -h
 usage: Generate_Script.py [-h] [--folder_data FOLDER_DATA] [--E E] [--nu NU] [--sigma_inf SIGMA_INF] [--K_IC K_IC] [--nb_gauges NB_GAUGES] [--x_gauge X_GAUGE]
                           [--y_gauge Y_GAUGE] [--theta_gauges THETA_GAUGES] [--a_0_mean A_0_MEAN] [--m_mean M_MEAN] [--m_std M_STD] [--C_mean C_MEAN] [--n_train N_TRAIN]
@@ -51,6 +80,7 @@ optional arguments:
   --lb_star LB_STAR     lower boundary (used for generating t* for the test set)
   --ub_star UB_STAR     upper boundary (used for generating t* for the test set)
 ```
+
 
 
 # Acknowledgements
