@@ -13,9 +13,13 @@ Reproducible results are possible using the Keras Tensorflow library. This code 
 
 # Generating set
 
+You can generate the illustration dataset (training/validation/testing) by using the `python Generate_Script.py` command as follows :
 
-In order to generate a dataset, use the `python Generate_Script.py` command and set optional arguments if needed.
-You can generate a dataset (training/validation/testing) by using as follows:
+```
+$ python Generate_Script.py 
+```
+
+In order to generate a dataset with different parameters, use the `python Generate_Script.py` command and set optional arguments if needed, such that :
 
 ```
 $ python Generate_Script.py  --folder_data            data \
@@ -31,7 +35,7 @@ $ python Generate_Script.py  --folder_data            data \
                              --m_mean                 3.5 \
                              --m_std                  0.125 \
                              --C_mean                 1e-10 \
-                             --n_train                1000   \
+                             --n_train                1000  \
                              --n_val                  100 \
                              --n_test                 100 \
                              --delta_k                500 \
@@ -39,7 +43,6 @@ $ python Generate_Script.py  --folder_data            data \
                              --ub_star                0.95 \
  
 ```
-
 
 
 Arguments dictionary and the the dataframes which are generated are saved to `data` folder by default.
