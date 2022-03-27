@@ -38,7 +38,7 @@ $ python Generate_Script.py  --folder_data            data \
                              --n_test                 100 \
                              --delta_k                500 \
                              --lb_star                0.33 \
-                             --ub_star                0.95 \
+                             --ub_star                0.95 
  
 ```
 
