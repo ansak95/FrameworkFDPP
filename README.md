@@ -1,9 +1,8 @@
 # Framework_FDPP
 
-FDPP is an open-source framework for generating large synthetic data sets specific to fatigue damage prognostic problems, in particular for an aerospace structure problems (e.g. fuselage panels). 
+FDPP is an open-source framework for generating large synthetic data sets specific to fatigue damage prognostic problems (FDPP), in particular for an aerospace structure problems (e.g. fuselage panels). 
 
 This work was carried out within the PREDICT project, involving Anass Akrim, Christian Gogu (Principal Investigator), Thomas Guillebot de Nerville, Michel Salaun, Paul Strahle, Rob Vingerhoeds and Brondon Waffa Pagou at the University of Toulouse (Institut Clément Ader and ISAE-SUPAERO DISC).
-
 
 
 # Description
