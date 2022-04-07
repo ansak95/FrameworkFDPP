@@ -1,8 +1,10 @@
 # Framework_FDPP
 
-This repository contains the experiments done in the work "A Framework for Generating Large Data Sets for Fatigue Damage Prognostic Problems" by Anass Akrim, Christian Gogu, Thomas Guillebot de Nerville, Michel Salaun, Paul Strahle, Rob Vingerhoeds and Brondon Waffa Pagou at the University of Toulouse (Institut Clément Ader and ISAE-SUPAERO DISC).
-
 FDPP is an open-source framework for generating large synthetic data sets specific to fatigue damage prognostic problems, in particular for an aerospace structure problems (e.g. fuselage panels). 
+
+This work was carried out within the PREDICT project, involving Anass Akrim, Christian Gogu (Principal Investigator), Thomas Guillebot de Nerville, Michel Salaun, Paul Strahle, Rob Vingerhoeds and Brondon Waffa Pagou at the University of Toulouse (Institut Clément Ader and ISAE-SUPAERO DISC).
+
+
 
 # Description
 
