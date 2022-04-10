@@ -46,11 +46,11 @@ def training_args():
     parser.add_argument('--a_0_mean', default=0.001, type=float,
                         help="Initial half crack length mean in [m]")
     parser.add_argument('--m_mean', default=3.5, type=float,
-                        help="m mean in [m]")
+                        help="m mean")
     parser.add_argument('--m_std', default=0.125, type=float,
-                        help="m std in [m]") 
+                        help="m std") 
     parser.add_argument('--C_mean', default=1e-10, type=float,
-                        help="C mean in [m]")
+                        help="C mean")
     
     #Sampling
     parser.add_argument('--n_train', default=1000, type=int,
