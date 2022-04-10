@@ -75,9 +75,9 @@ optional arguments:
   --theta_gauges THETA_GAUGES
                         Angle of the gauges placed
   --a_0_mean A_0_MEAN   Initial half crack length mean in [m]
-  --m_mean M_MEAN       m mean in [m]
-  --m_std M_STD         m std in [m]
-  --C_mean C_MEAN       C mean in [m]
+  --m_mean M_MEAN       m mean 
+  --m_std M_STD         m std 
+  --C_mean C_MEAN       C mean 
   --n_train N_TRAIN     Number of training structures
   --n_val N_VAL         Number of validation structures
   --n_test N_TEST       Number of testing structures
