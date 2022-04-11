@@ -1,4 +1,4 @@
-# Framework for FDPP (Fatigue Damage Prognostic Problems)
+# Framework for FDPP (Fatigue Damage Prognostics Problem)
 
 FDPP is an open-source framework for generating large synthetic data sets specific to fatigue damage prognostic problems, in particular for an aerospace structure problems (e.g. fuselage panels). 
 
