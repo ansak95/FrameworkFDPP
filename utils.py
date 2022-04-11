@@ -125,7 +125,7 @@ def gen_param_sample(a_0_mean, a_0_std, C_mean, C_std, m_mean, m_std):
     a_0_scaled_lower = 0#(0 - a_0_mean)/a_0_std # Scale lower limit (0) appropriately for scipy; upper limit is infinite at any scale
     a_0 = scipy.stats.truncnorm.rvs(a_0_scaled_lower, np.inf, a_0_mean, a_0_std) # Perform the actual sample
 
-    log_C_mean = np.log((C_mean**2)/np.sqrt(C_mean**2 + C_std**2))
+    log_C_mean = np.log(C_mean) - (C_std**2)/2 #ln(E[C]) - Var[C]/2
     log_C_std = np.log(1+ (C_std**2)/(C_mean**2))
     
     C = 0
