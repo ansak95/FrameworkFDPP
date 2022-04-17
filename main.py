@@ -161,4 +161,5 @@ if __name__ == "__main__":
     utils.build_dataset(validation_set,  cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_val')
     print('\nTest set:')
     utils.build_dataset(test_set,        cols,  nb_gauges = nb_gauges, stop_tstar = True,  thinning = thinning).to_pickle(folder_data + '/data_test')
-    print('Done.')
+    
+    print(f'Datasets created and saved in the folder "{folder_data}".')
