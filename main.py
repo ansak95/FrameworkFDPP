@@ -115,18 +115,24 @@ ub_tstar = args.ub_star #upper boundary
 
 
 if __name__ == "__main__":
-
+    
     # set folder
+    print('Create folder...', end = ' ')
     folder_data = args.folder_data
     import os
     os.mkdir(folder_data)
+    print('Done.')
+    
     #save the args
+    print('Save the args...', end = ' ')
     f = open(folder_data+"/args.txt", "w+")
     f.write(str(args))
     f.close()
+    print('Done.')
     
     #Generate set
-
+    print('Generate datasets...')
+    
     if n_train >= 1 : 
         print('\nTraining set:')
         training_set = utils.gen_dataset('train', x_gauge, y_gauge, theta_gauge, delta_sigma, E, nu, a_0_mean, a_0_std, a_crit, C_mean, C_std, m_mean, m_std, n_train, thinning)
@@ -143,12 +149,16 @@ if __name__ == "__main__":
         test_set['t_star'] = 0 #t* which is the size of the sequence (in number of cycles) available for the testing set
         test_set['t_star'] = (np.random.uniform(low=lb_tstar, high=ub_tstar, size=(test_set.shape[0],)) * test_set.nb_cycles.values).astype(int)
         test_set.to_pickle(folder_data + '/test_set', protocol = pickle.HIGHEST_PROTOCOL)
-
+    print("Done.")
 
     #Structuring into dataframes
+    print("Structuring the datasets...")
     cols = ['ID', 'cycle'] +  ['gauge' + str(i+1) for i in range(nb_gauges)] +  ['RUL'] #set columns for the datasets
     #set the stop_tstar args to True if the sequences should be incomplete (for example for the test set)
+    print('\nTraining set:')
     utils.build_dataset(training_set,    cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_train')
+    print('\nValidation set:')
     utils.build_dataset(validation_set,  cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_val')
+    print('\nTest set:')
     utils.build_dataset(test_set,        cols,  nb_gauges = nb_gauges, stop_tstar = True,  thinning = thinning).to_pickle(folder_data + '/data_test')
-
+    print('Done.')
