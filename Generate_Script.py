@@ -73,15 +73,6 @@ def training_args():
 args = training_args()
 
 
-# set folder
-folder_data = args.folder_data
-import os
-os.mkdir(folder_data)
-#save the args
-f = open(folder_data+"/args.txt", "w+")
-f.write(str(args))
-f.close()
-
 
 # Set Elastic parameters
 E = args.E
@@ -123,31 +114,41 @@ lb_tstar = args.lb_star #lower boundary
 ub_tstar = args.ub_star #upper boundary
 
 
+if __name__ == "__main__":
 
-#Generate set
+    # set folder
+    folder_data = args.folder_data
+    import os
+    os.mkdir(folder_data)
+    #save the args
+    f = open(folder_data+"/args.txt", "w+")
+    f.write(str(args))
+    f.close()
+    
+    #Generate set
 
-if n_train >= 1 : 
-    print('\nTraining set:')
-    training_set = utils.gen_dataset('train', x_gauge, y_gauge, theta_gauge, delta_sigma, E, nu, a_0_mean, a_0_std, a_crit, C_mean, C_std, m_mean, m_std, n_train, thinning)
-    training_set.to_pickle(folder_data + '/training_set', protocol = pickle.HIGHEST_PROTOCOL)
+    if n_train >= 1 : 
+        print('\nTraining set:')
+        training_set = utils.gen_dataset('train', x_gauge, y_gauge, theta_gauge, delta_sigma, E, nu, a_0_mean, a_0_std, a_crit, C_mean, C_std, m_mean, m_std, n_train, thinning)
+        training_set.to_pickle(folder_data + '/training_set', protocol = pickle.HIGHEST_PROTOCOL)
 
-if n_validation >= 1 : 
-    print('\nValidation set:')
-    validation_set = utils.gen_dataset('train', x_gauge, y_gauge, theta_gauge, delta_sigma, E, nu, a_0_mean, a_0_std, a_crit, C_mean, C_std, m_mean, m_std, n_train, thinning)
-    validation_set.to_pickle(folder_data + '/validation_set', protocol = pickle.HIGHEST_PROTOCOL)
+    if n_validation >= 1 : 
+        print('\nValidation set:')
+        validation_set = utils.gen_dataset('train', x_gauge, y_gauge, theta_gauge, delta_sigma, E, nu, a_0_mean, a_0_std, a_crit, C_mean, C_std, m_mean, m_std, n_train, thinning)
+        validation_set.to_pickle(folder_data + '/validation_set', protocol = pickle.HIGHEST_PROTOCOL)
 
-if n_test >= 1 : 
-    print('\nTest set:')
-    test_set = utils.gen_dataset('test', x_gauge, y_gauge, theta_gauge, delta_sigma, E, nu, a_0_mean, a_0_std,a_crit, C_mean, C_std, m_mean, m_std, n_test, thinning)
-    test_set['t_star'] = 0 #t* which is the size of the sequence (in number of cycles) available for the testing set
-    test_set['t_star'] = (np.random.uniform(low=lb_tstar, high=ub_tstar, size=(test_set.shape[0],)) * test_set.nb_cycles.values).astype(int)
-    test_set.to_pickle(folder_data + '/test_set', protocol = pickle.HIGHEST_PROTOCOL)
+    if n_test >= 1 : 
+        print('\nTest set:')
+        test_set = utils.gen_dataset('test', x_gauge, y_gauge, theta_gauge, delta_sigma, E, nu, a_0_mean, a_0_std,a_crit, C_mean, C_std, m_mean, m_std, n_test, thinning)
+        test_set['t_star'] = 0 #t* which is the size of the sequence (in number of cycles) available for the testing set
+        test_set['t_star'] = (np.random.uniform(low=lb_tstar, high=ub_tstar, size=(test_set.shape[0],)) * test_set.nb_cycles.values).astype(int)
+        test_set.to_pickle(folder_data + '/test_set', protocol = pickle.HIGHEST_PROTOCOL)
 
 
-#Structuring into dataframes
-cols = ['ID', 'cycle'] +  ['gauge' + str(i+1) for i in range(nb_gauges)] +  ['RUL'] #set columns for the datasets
-#set the stop_tstar args to True if the sequences should be incomplete (for example for the test set)
-utils.build_dataset(training_set,    cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_train')
-utils.build_dataset(validation_set,  cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_val')
-utils.build_dataset(test_set,        cols,  nb_gauges = nb_gauges, stop_tstar = True,  thinning = thinning).to_pickle(folder_data + '/data_test')
+    #Structuring into dataframes
+    cols = ['ID', 'cycle'] +  ['gauge' + str(i+1) for i in range(nb_gauges)] +  ['RUL'] #set columns for the datasets
+    #set the stop_tstar args to True if the sequences should be incomplete (for example for the test set)
+    utils.build_dataset(training_set,    cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_train')
+    utils.build_dataset(validation_set,  cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_val')
+    utils.build_dataset(test_set,        cols,  nb_gauges = nb_gauges, stop_tstar = True,  thinning = thinning).to_pickle(folder_data + '/data_test')
 
