@@ -35,9 +35,9 @@ def training_args():
     #Strain gauges
     parser.add_argument('--nb_gauges', default=3, type=int,
                         help="Number of gauges")
-    parser.add_argument('--x_gauge', default=0.003 0.014 0.025, nargs='+', type=float,
+    parser.add_argument('--x_gauge', default=(0.003, 0.014, 0.025), nargs='+', type=float,
                         help="x position of the gauges placed")
-    parser.add_argument('--y_gauge', default=(0.014, 0.014, 0.014), type=tuple,
+    parser.add_argument('--y_gauge', default=(0.014, 0.014, 0.014), nargs='+', type=float,
                         help="y position of the gauges placed")
     parser.add_argument('--theta_gauges', default=45, type=float,
                         help="Angle of the gauges placed")
