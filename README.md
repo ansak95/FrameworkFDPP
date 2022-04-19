@@ -22,7 +22,7 @@ git clone https://github.com/ansak95/FrameworkFDPP.git
 cd FrameworkFDPP
 ```
 
-You can generate the illustration dataset (training/validation/testing) by using the `python Generate_Script.py` command as follows :
+You can generate the illustration dataset (training/validation/testing) by using the `python main.py` command as follows :
 
 ```
 python main.py 
