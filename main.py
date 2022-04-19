@@ -79,7 +79,7 @@ E = args.E
 nu = args.nu
 
 # Set Gauges Placement
-x_gauge = tuple(args.x_gauge)
+x_gauge = args.x_gauge
 y_gauge = args.y_gauge
 nb_gauges = args.nb_gauges
 theta_gauge = args.theta_gauges
