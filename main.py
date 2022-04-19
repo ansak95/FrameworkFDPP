@@ -35,7 +35,7 @@ def training_args():
     #Strain gauges
     parser.add_argument('--nb_gauges', default=3, type=int,
                         help="Number of gauges")
-    parser.add_argument('--x_gauge', default=(0.003, 0.014, 0.025), type=tuple,
+    parser.add_argument('--x_gauge', default=0.003 0.014 0.025, nargs='+', type=float,
                         help="x position of the gauges placed")
     parser.add_argument('--y_gauge', default=(0.014, 0.014, 0.014), type=tuple,
                         help="y position of the gauges placed")
@@ -79,7 +79,7 @@ E = args.E
 nu = args.nu
 
 # Set Gauges Placement
-x_gauge = args.x_gauge
+x_gauge = tuple(args.x_gauge)
 y_gauge = args.y_gauge
 nb_gauges = args.nb_gauges
 theta_gauge = args.theta_gauges
@@ -155,11 +155,17 @@ if __name__ == "__main__":
     print("Structuring the datasets...")
     cols = ['ID', 'cycle'] +  ['gauge' + str(i+1) for i in range(nb_gauges)] +  ['RUL'] #set columns for the datasets
     #set the stop_tstar args to True if the sequences should be incomplete (for example for the test set)
-    print('\nTraining set:')
-    utils.build_dataset(training_set,    cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_train')
-    print('\nValidation set:')
-    utils.build_dataset(validation_set,  cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_val')
-    print('\nTest set:')
-    utils.build_dataset(test_set,        cols,  nb_gauges = nb_gauges, stop_tstar = True,  thinning = thinning).to_pickle(folder_data + '/data_test')
+    
+    if n_train >= 1 :
+        print('\nTraining set:')
+        utils.build_dataset(training_set,    cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_train')
+    
+    if n_validation >= 1 :
+        print('\nValidation set:')
+        utils.build_dataset(validation_set,  cols,  nb_gauges = nb_gauges, stop_tstar = False, thinning = thinning).to_pickle(folder_data + '/data_val')
+    
+    if n_test >= 1 :
+        print('\nTest set:')
+        utils.build_dataset(test_set,        cols,  nb_gauges = nb_gauges, stop_tstar = True,  thinning = thinning).to_pickle(folder_data + '/data_test')
     
     print(f'Datasets created and saved in the folder "{folder_data}".')
