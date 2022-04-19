@@ -18,25 +18,26 @@ The project is illustrated with a realistic case study on the Jupyter Notebook `
 This code was tested on Python 3.8.5, Pandas 0.25.1, Ubuntu 18.04, and Anaconda 4.7.11. This repository can be cloned using the following command :
 
 ```
-$ git clone git@github.com:ansak95/FrameworkFDPP.git
+git clone https://github.com/ansak95/FrameworkFDPP.git
+cd FrameworkFDPP
 ```
 
 You can generate the illustration dataset (training/validation/testing) by using the `python Generate_Script.py` command as follows :
 
 ```
-$ python main.py 
+python main.py 
 ```
 Or using a shell script that executes the configuration actions, allowing to modify the parameters directly on the script : 
 
 ```
-$ bash generate.sh 
+bash generate.sh 
 ```
 
 
 In order to generate a dataset with different parameters, use the `python main.py` command and set optional arguments if needed, such that :
 
 ```
-$ python main.py             --folder_data            data \
+python main.py               --folder_data            data \
                              --E                      71.7e9 \
                              --nu                     0.33 \
                              --sigma_inf              78.6e6 \
@@ -64,7 +65,7 @@ The detail of command-line usage is as follows:
 
 ```
 
-$ python main.py -h
+python main.py -h
 usage: main.py [-h] [--folder_data FOLDER_DATA] [--E E] [--nu NU] [--sigma_inf SIGMA_INF] [--K_IC K_IC] [--nb_gauges NB_GAUGES] [--x_gauge X_GAUGE]
                           [--y_gauge Y_GAUGE] [--theta_gauges THETA_GAUGES] [--a_0_mean A_0_MEAN] [--m_mean M_MEAN] [--m_std M_STD] [--C_mean C_MEAN] [--n_train N_TRAIN]
                           [--n_val N_VAL] [--n_test N_TEST] [--delta_k DELTA_K] [--lb_star LB_STAR] [--ub_star UB_STAR]
