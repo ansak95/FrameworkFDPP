@@ -43,8 +43,8 @@ python main.py               --folder_data            data \
                              --sigma_inf              78.6e6 \
                              --K_IC                   19.7 \
                              --nb_gauges              3 \
-                             --x_gauge                (0.003, 0.014, 0.025) \
-                             --y_gauge                (0.014, 0.014, 0.014)  \
+                             --x_gauge                0.003 0.014 0.025 \
+                             --y_gauge                0.014 0.014 0.014  \
                              --theta_gauges           45 \
                              --a_0_mean               0.001 \
                              --m_mean                 3.5 \
