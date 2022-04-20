@@ -15,7 +15,7 @@ The project is illustrated with a realistic case study on the Jupyter Notebook `
 
 # Generating set
 
-This code was tested on Python 3.8.5, Pandas 0.25.1, Ubuntu 18.04, and Anaconda 4.7.11. This repository can be cloned using the following command :
+This code was tested on Python 3.8.5, Pandas 0.25.1, Ubuntu 18.04, and Anaconda 4.7.11. This repository can be installed using the following command :
 
 ```
 git clone https://github.com/ansak95/FrameworkFDPP.git
