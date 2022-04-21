@@ -15,11 +15,15 @@ The project is illustrated with a realistic case study on the Jupyter Notebook `
 
 # Generating set
 
-This code was tested on Python 3.8.5, Pandas 0.25.1, Ubuntu 18.04, and Anaconda 4.7.11. This repository can be installed using the following command :
+This code was tested on Python 3.7, Pandas 0.25.1, Ubuntu 18.04, and Anaconda 4.7.11. This repository can be installed using the following command :
 
 ```
 git clone https://github.com/ansak95/FrameworkFDPP.git
 cd FrameworkFDPP
+
+conda create -n env_fdpp python=3.7 pandas=0.25.1
+conda activate env_fdpp
+pip install -r requirements.txt
 ```
 
 You can generate the illustration dataset (training/validation/testing) by using the `python main.py` command as follows :
