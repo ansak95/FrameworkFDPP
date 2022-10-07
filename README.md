@@ -1,6 +1,6 @@
 # Framework for FDPP (Fatigue Damage Prognostics Problem)
 
-FDPP is an open-source framework for generating large synthetic data sets specific to fatigue damage prognostic problems, in particular for an aerospace structure problems (e.g. fuselage panels). 
+FDPP is an open-source framework for generating large synthetic data sets specific to fatigue damage prognosticx problems, in particular for an aerospace structure problem (e.g. fuselage panels). 
 
 This work was carried out within the PREDICT project, involving Anass Akrim, Christian Gogu (Principal Investigator), Thomas Guillebot de Nerville, Michel Salaun, Paul Strahle, Rob Vingerhoeds and Brondon Waffa Pagou at the University of Toulouse (Institut Clément Ader and ISAE-SUPAERO DISC). If you find this repository helpful, please cite our work:
 
@@ -10,8 +10,6 @@ This work was carried out within the PREDICT project, involving Anass Akrim, Chr
   booktitle={2022 IEEE International Conference on Prognostics and Health Management (ICPHM)}, 
   title={A Framework for Generating Large Data Sets for Fatigue Damage Prognostic Problems}, 
   year={2022},
-  volume={},
-  number={},
   pages={25-33},
   doi={10.1109/ICPHM53196.2022.9815692}}
 ```
@@ -21,8 +19,7 @@ This work was carried out within the PREDICT project, involving Anass Akrim, Chr
 
 The idea behind this project is to propose a framework and software code for synthetically generating large training data sets for a realistic fatigue damage prognostics problem. 
 
-The project is illustrated with a realistic case study on the Jupyter Notebook ``Illustration_CaseStudy.ipynb``, i.e. a RUL estimation problem where the available input data is strain gauge data, and the applicability of some of the most commonly used DL models to address failure prognostics has been studied (RNN, LSTM, GRU, 1D-CNN and TCN), available on the ``models`` directory. Reproducible results are possible using the Keras Tensorflow library, with Tensorflow version 2.3.0, and CUDA 11.0. It requires V100 GPUs.
-
+The project is illustrated with a realistic case study on the Jupyter Notebook ``Illustration_CaseStudy.ipynb``, i.e. a RUL estimation problem where the available input data is strain gauge data, and the applicability of some of the most commonly used DL models to address failure prognostics has been studied (RNN, LSTM, GRU, 1D-CNN and TCN), available on the ``models`` directory. Keras Tensorflow library was used, with Tensorflow version 2.3.0, and CUDA 11.0. Models were trained mainly on NVIDIA V100 GPUs.
 
 
 # Generating set
