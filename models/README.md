@@ -1,1 +1,1 @@
-Models saved with their training strategy for RUL estimation (RNN, LSTM, GRU, CNN, TCN). In this work, Keras Tensorflow library is used, with Tensorflow version 2.3.0, and CUDA 11.0. Models were trained mainly on NVIDIA V100 GPUs.
+Models saved with their training strategy for RUL estimation (RNN, LSTM, GRU, CNN, and TCN). In this work, Keras Tensorflow library is used, with Tensorflow version 2.3.0, and CUDA 11.0. Models were trained mainly on NVIDIA V100 GPUs.
